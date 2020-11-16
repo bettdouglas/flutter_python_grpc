@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package alaska;
+
+import "geometry.proto";
+
+service Alasker {
+    rpc GetRivers (Feature) returns (Rivers);
+    rpc GetRegions (Feature) returns (Regions);
+    rpc GetLakes (Feature) returns (Lakes);
+    rpc GetAirports (Feature) returns (Airports);
+    rpc GetBuildUps (Feature) returns (BuiltUps);
+}
+
+message Feature {
+    enum FeatureType {
+        AIRPORT = 0;
+        LAKE = 2;
+        RIVER = 3;
+        BUILT_UPS = 4;
+        REGIONS = 5;
+        TREES = 6;
+    }
+    FeatureType feature = 1;
+}
+
+message River {
+    int32 id = 1;
+    string codedesc = 2;
+    string name = 3;
+    string code = 4;
+    geometry.Geometry geom = 5;
+}
+
+message Rivers {
+    repeated River rivers = 1;
+    int32 srid = 2;
+}
+
+message Airport {
+    int32 gid = 1;
+    int32 id = 2;
+    int32 fk_region = 3;
+    double elevation = 4;
+    string name = 5;
+    string use = 6;
+    geometry.Geometry geom = 7;
+}
+
+message Airports {
+    repeated Airport airports = 1;
+    int32 srid = 2;
+}
+
+message Lake {
+    int32 gid = 1;
+    string name = 2;
+    geometry.Geometry geom = 3;
+}
+
+message Lakes {
+    repeated Lake lakes = 1;
+    int32 srid = 2;
+}
+
+message BuiltUp {
+    int32 gid = 1;
+    int32 category = 2;
+    string name = 3;
+    string code = 4;
+    geometry.Geometry geom = 5;
+}
+
+message BuiltUps {
+    repeated BuiltUp builtups = 1;
+    int32 srid = 2;
+}
+
+message Region {
+    int32 id = 1;
+    string name = 2;
+    string type = 3;
+    geometry.Geometry geom = 4;
+}
+
+message Regions {
+    repeated Region regions = 1;
+    int32 srid = 2;
+}
+// protoc -I lib/protos/ lib/protos/alaska.proto --dart_out=grpc:lib/protos/generated
