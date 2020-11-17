@@ -12,8 +12,6 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^4.3.2+2
-  chuck_api: 
-    path: packages/chuck_api
   freezed_annotation: ^0.12.0
   flutter_map: any
   protobuf: 1.1.0
