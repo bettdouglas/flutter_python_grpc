@@ -1,5 +1,5 @@
+from argparse import ArgumentParser
 from grpc_interceptor.exception_to_status import ExceptionToStatusInterceptor
-from start_server import serve
 from sqlalchemy import MetaData,create_engine,Table
 from sqlalchemy import select
 
@@ -11,6 +11,8 @@ from alaska_pb2_grpc import AlaskerServicer
 from alaska_pb2 import Rivers,River,Airport,Airports,Lakes,Lake,Regions,Region,BuiltUps,BuiltUp
 from shapely_serializer import ShapelyGeometrySerializer
 import alaska_pb2_grpc
+import argparse
+
 
 shapely_serializer = ShapelyGeometrySerializer()
 
@@ -79,7 +81,6 @@ class AlaskerServicerImpl(AlaskerServicer):
 
         self.geometry_columns = Table('geometry_columns',metadata,autoload=True,autoload_with=engine)
 
-        print(metadata.tables['geometry_columns'])
 
     def GetRivers(self, request, context):
         print('GetRivers request')
@@ -138,8 +139,10 @@ def insecure_channel(host, port):
                      (cygrpc.ChannelArgKey.max_receive_message_length, -1)])
         return grpc.beta.implementations.Channel(channel)
 
-def serve():
-    engine = create_engine('postgresql://postgres:Mula1000@localhost/dart_test')
+
+
+def serve(password,db_name='alaska_features',username='postgres',host='localhost'):
+    engine = create_engine('postgresql://{}:{}@{}/{}'.format(username,password,host,db_name))
 
     alaska_impl = AlaskerServicerImpl(engine)
 
@@ -153,10 +156,23 @@ def serve():
     server.add_insecure_port('0.0.0.0:4326')
     # server.add_insecure_port('[::]:50001')
 
+    print('Server running at 0.0.0.0:4326. Cd to alaska_freezed_app and start debugging\nRemember to type \n\t adb reverse tcp:4326 tcp:4326\n if using emulator')
+
     server.start()
 
     server.wait_for_termination()
 
 if __name__ == "__main__":
-    serve()
+    parser = ArgumentParser()
+    
+    parser.add_argument('-db','--db_name',help="PostgreSQL db_name where you imported alaska shapefiles in ./import-alaska-data.sh",type=str)
+    parser.add_argument('--host',help='Host the PostgreSQL server is running in',type=str)
+    parser.add_argument('-u','--username',help='Username to connect to PostgreSQL as')
+    parser.add_argument('-w','--password',help='Password of the database user')
 
+    args = parser.parse_args()
+
+
+    serve(args.password)
+
+    
