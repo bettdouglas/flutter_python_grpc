@@ -34,7 +34,6 @@ extension PointPlotExtension on jts.Point {
       point: LatLng(this.getY(), this.getX()),
       builder: builder,
       height: height,
-      anchorPos: anchorPos,
       width: width,
     );
   }

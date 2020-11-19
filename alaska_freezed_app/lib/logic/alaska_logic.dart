@@ -17,10 +17,9 @@ class DataProvider<T> with ChangeNotifier {
     notifyListeners();
 
     try {
+      
       final response = await getter;
       dataState = DataReady(response);
-
-      print(response);
 
       notifyListeners();
     } catch (e,st) {
