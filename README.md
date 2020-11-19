@@ -2,7 +2,7 @@
 An example app to show how to serialize and deserialize GEOS geometries using a common .proto file and plot them in flutter using flutter_map. 
 
 ## Requirements
-* PostgreSQL database runing with [postgis.net](postgis extension) installed.
+* PostgreSQL database runing with [postgis.net](postgis) installed.
 * Flutter
 * Python
 
