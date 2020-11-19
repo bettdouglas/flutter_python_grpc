@@ -18,7 +18,7 @@ shapely_serializer = ShapelyGeometrySerializer()
 
 def serialize_river(row):
     return River(
-        id = row.gid,
+        id = row.ogc_fid,
         codedesc = row.f_codedesc,
         name = row.nam,
         code = row.f_code,
@@ -27,7 +27,7 @@ def serialize_river(row):
 
 def serialize_airport(row):
     return Airport(
-        gid=row.gid,
+        gid=row.ogc_fid,
         id = row.id,
         fk_region = row.fk_region,
         elevation = row.elev,
@@ -38,14 +38,14 @@ def serialize_airport(row):
 
 def serialize_lake(row):
     return Lake(
-        gid = row.gid,
+        gid = row.ogc_fid,
         name = row.names,
         geom = shapely_serializer.serialize(to_shape(row.geom))
     )
 
 def serialize_region(row):
     return Region(
-        id = row.id,
+        id = row.ogc_fid,
         name = row.name_2,
         type = row.type_2,
         geom = shapely_serializer.serialize(to_shape(row.geom))
@@ -53,7 +53,7 @@ def serialize_region(row):
 
 def serialize_built_up(row):
     return BuiltUp(
-        gid = row.gid,
+        gid = row.ogc_fid,
         category = row.cat,
         name = row.name,
         code = row.f_code,
@@ -171,7 +171,6 @@ if __name__ == "__main__":
     parser.add_argument('-w','--password',help='Password of the database user')
 
     args = parser.parse_args()
-
 
     serve(args.password)
 
