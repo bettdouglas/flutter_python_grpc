@@ -10,6 +10,8 @@ service Alasker {
     rpc GetLakes (Feature) returns (Lakes);
     rpc GetAirports (Feature) returns (Airports);
     rpc GetBuildUps (Feature) returns (BuiltUps);
+    rpc GetTrees (Feature) returns (Trees);
+    rpc GetPipelines (Feature) returns (Pipelines);
 }
 
 message Feature {
@@ -87,4 +89,29 @@ message Regions {
     repeated Region regions = 1;
     int32 srid = 2;
 }
+
+message Tree {
+    int32 id = 1;
+    double category = 2;
+    string vegetationDescription = 3;
+    geometry.Geometry geom = 4;
+}
+
+message Trees {
+    repeated Tree trees = 1;
+    int32 srid = 2;
+}
+
+message Pipeline {
+    int32 id = 1;
+    double category = 2;
+    string description = 3;
+    geometry.Geometry geom = 4;
+}
+
+message Pipelines {
+    repeated Pipeline pipelines = 1;
+    int32 srid = 2;
+}
+
 // protoc -I lib/protos/ lib/protos/alaska.proto --dart_out=grpc:lib/protos/generated

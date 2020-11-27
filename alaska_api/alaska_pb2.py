@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0c\x61laska.proto\x12\x06\x61laska\x1a\x0egeometry.proto\"\x8f\x01\n\x07\x46\x65\x61ture\x12,\n\x07\x66\x65\x61ture\x18\x01 \x01(\x0e\x32\x1b.alaska.Feature.FeatureType\"V\n\x0b\x46\x65\x61tureType\x12\x0b\n\x07\x41IRPORT\x10\x00\x12\x08\n\x04LAKE\x10\x02\x12\t\n\x05RIVER\x10\x03\x12\r\n\tBUILT_UPS\x10\x04\x12\x0b\n\x07REGIONS\x10\x05\x12\t\n\x05TREES\x10\x06\"c\n\x05River\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08\x63odedesc\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x63ode\x18\x04 \x01(\t\x12 \n\x04geom\x18\x05 \x01(\x0b\x32\x12.geometry.Geometry\"5\n\x06Rivers\x12\x1d\n\x06rivers\x18\x01 \x03(\x0b\x32\r.alaska.River\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"\x85\x01\n\x07\x41irport\x12\x0b\n\x03gid\x18\x01 \x01(\x05\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x11\n\tfk_region\x18\x03 \x01(\x05\x12\x11\n\televation\x18\x04 \x01(\x01\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x0b\n\x03use\x18\x06 \x01(\t\x12 \n\x04geom\x18\x07 \x01(\x0b\x32\x12.geometry.Geometry\";\n\x08\x41irports\x12!\n\x08\x61irports\x18\x01 \x03(\x0b\x32\x0f.alaska.Airport\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"C\n\x04Lake\x12\x0b\n\x03gid\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12 \n\x04geom\x18\x03 \x01(\x0b\x32\x12.geometry.Geometry\"2\n\x05Lakes\x12\x1b\n\x05lakes\x18\x01 \x03(\x0b\x32\x0c.alaska.Lake\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"f\n\x07\x42uiltUp\x12\x0b\n\x03gid\x18\x01 \x01(\x05\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\x05\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x63ode\x18\x04 \x01(\t\x12 \n\x04geom\x18\x05 \x01(\x0b\x32\x12.geometry.Geometry\";\n\x08\x42uiltUps\x12!\n\x08\x62uiltups\x18\x01 \x03(\x0b\x32\x0f.alaska.BuiltUp\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"R\n\x06Region\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12 \n\x04geom\x18\x04 \x01(\x0b\x32\x12.geometry.Geometry\"8\n\x07Regions\x12\x1f\n\x07regions\x18\x01 \x03(\x0b\x32\x0e.alaska.Region\x12\x0c\n\x04srid\x18\x02 \x01(\x05\x32\xf7\x01\n\x07\x41lasker\x12,\n\tGetRivers\x12\x0f.alaska.Feature\x1a\x0e.alaska.Rivers\x12.\n\nGetRegions\x12\x0f.alaska.Feature\x1a\x0f.alaska.Regions\x12*\n\x08GetLakes\x12\x0f.alaska.Feature\x1a\r.alaska.Lakes\x12\x30\n\x0bGetAirports\x12\x0f.alaska.Feature\x1a\x10.alaska.Airports\x12\x30\n\x0bGetBuildUps\x12\x0f.alaska.Feature\x1a\x10.alaska.BuiltUpsb\x06proto3'
+  serialized_pb=b'\n\x0c\x61laska.proto\x12\x06\x61laska\x1a\x0egeometry.proto\"\x8f\x01\n\x07\x46\x65\x61ture\x12,\n\x07\x66\x65\x61ture\x18\x01 \x01(\x0e\x32\x1b.alaska.Feature.FeatureType\"V\n\x0b\x46\x65\x61tureType\x12\x0b\n\x07\x41IRPORT\x10\x00\x12\x08\n\x04LAKE\x10\x02\x12\t\n\x05RIVER\x10\x03\x12\r\n\tBUILT_UPS\x10\x04\x12\x0b\n\x07REGIONS\x10\x05\x12\t\n\x05TREES\x10\x06\"c\n\x05River\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08\x63odedesc\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x63ode\x18\x04 \x01(\t\x12 \n\x04geom\x18\x05 \x01(\x0b\x32\x12.geometry.Geometry\"5\n\x06Rivers\x12\x1d\n\x06rivers\x18\x01 \x03(\x0b\x32\r.alaska.River\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"\x85\x01\n\x07\x41irport\x12\x0b\n\x03gid\x18\x01 \x01(\x05\x12\n\n\x02id\x18\x02 \x01(\x05\x12\x11\n\tfk_region\x18\x03 \x01(\x05\x12\x11\n\televation\x18\x04 \x01(\x01\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x0b\n\x03use\x18\x06 \x01(\t\x12 \n\x04geom\x18\x07 \x01(\x0b\x32\x12.geometry.Geometry\";\n\x08\x41irports\x12!\n\x08\x61irports\x18\x01 \x03(\x0b\x32\x0f.alaska.Airport\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"C\n\x04Lake\x12\x0b\n\x03gid\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12 \n\x04geom\x18\x03 \x01(\x0b\x32\x12.geometry.Geometry\"2\n\x05Lakes\x12\x1b\n\x05lakes\x18\x01 \x03(\x0b\x32\x0c.alaska.Lake\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"f\n\x07\x42uiltUp\x12\x0b\n\x03gid\x18\x01 \x01(\x05\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\x05\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04\x63ode\x18\x04 \x01(\t\x12 \n\x04geom\x18\x05 \x01(\x0b\x32\x12.geometry.Geometry\";\n\x08\x42uiltUps\x12!\n\x08\x62uiltups\x18\x01 \x03(\x0b\x32\x0f.alaska.BuiltUp\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"R\n\x06Region\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12 \n\x04geom\x18\x04 \x01(\x0b\x32\x12.geometry.Geometry\"8\n\x07Regions\x12\x1f\n\x07regions\x18\x01 \x03(\x0b\x32\x0e.alaska.Region\x12\x0c\n\x04srid\x18\x02 \x01(\x05\"e\n\x04Tree\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\x01\x12\x1d\n\x15vegetationDescription\x18\x03 \x01(\t\x12 \n\x04geom\x18\x04 \x01(\x0b\x32\x12.geometry.Geometry\"$\n\x05Trees\x12\x1b\n\x05trees\x18\x01 \x03(\x0b\x32\x0c.alaska.Tree\"_\n\x08Pipeline\x12\n\n\x02id\x18\x01 \x01(\x05\x12\x10\n\x08\x63\x61tegory\x18\x02 \x01(\x01\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12 \n\x04geom\x18\x04 \x01(\x0b\x32\x12.geometry.Geometry\"0\n\tPipelines\x12#\n\tpipelines\x18\x01 \x03(\x0b\x32\x10.alaska.Pipeline2\xd7\x02\n\x07\x41lasker\x12,\n\tGetRivers\x12\x0f.alaska.Feature\x1a\x0e.alaska.Rivers\x12.\n\nGetRegions\x12\x0f.alaska.Feature\x1a\x0f.alaska.Regions\x12*\n\x08GetLakes\x12\x0f.alaska.Feature\x1a\r.alaska.Lakes\x12\x30\n\x0bGetAirports\x12\x0f.alaska.Feature\x1a\x10.alaska.Airports\x12\x30\n\x0bGetBuildUps\x12\x0f.alaska.Feature\x1a\x10.alaska.BuiltUps\x12*\n\x08GetTrees\x12\x0f.alaska.Feature\x1a\r.alaska.Trees\x12\x32\n\x0cGetPipelines\x12\x0f.alaska.Feature\x1a\x11.alaska.Pipelinesb\x06proto3'
   ,
   dependencies=[geometry__pb2.DESCRIPTOR,])
 
@@ -592,6 +592,176 @@ _REGIONS = _descriptor.Descriptor(
   serialized_end=965,
 )
 
+
+_TREE = _descriptor.Descriptor(
+  name='Tree',
+  full_name='alaska.Tree',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='alaska.Tree.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='category', full_name='alaska.Tree.category', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vegetationDescription', full_name='alaska.Tree.vegetationDescription', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='geom', full_name='alaska.Tree.geom', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=967,
+  serialized_end=1068,
+)
+
+
+_TREES = _descriptor.Descriptor(
+  name='Trees',
+  full_name='alaska.Trees',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='trees', full_name='alaska.Trees.trees', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1070,
+  serialized_end=1106,
+)
+
+
+_PIPELINE = _descriptor.Descriptor(
+  name='Pipeline',
+  full_name='alaska.Pipeline',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='alaska.Pipeline.id', index=0,
+      number=1, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='category', full_name='alaska.Pipeline.category', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='alaska.Pipeline.description', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='geom', full_name='alaska.Pipeline.geom', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1108,
+  serialized_end=1203,
+)
+
+
+_PIPELINES = _descriptor.Descriptor(
+  name='Pipelines',
+  full_name='alaska.Pipelines',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='pipelines', full_name='alaska.Pipelines.pipelines', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1205,
+  serialized_end=1253,
+)
+
 _FEATURE.fields_by_name['feature'].enum_type = _FEATURE_FEATURETYPE
 _FEATURE_FEATURETYPE.containing_type = _FEATURE
 _RIVER.fields_by_name['geom'].message_type = geometry__pb2._GEOMETRY
@@ -604,6 +774,10 @@ _BUILTUP.fields_by_name['geom'].message_type = geometry__pb2._GEOMETRY
 _BUILTUPS.fields_by_name['builtups'].message_type = _BUILTUP
 _REGION.fields_by_name['geom'].message_type = geometry__pb2._GEOMETRY
 _REGIONS.fields_by_name['regions'].message_type = _REGION
+_TREE.fields_by_name['geom'].message_type = geometry__pb2._GEOMETRY
+_TREES.fields_by_name['trees'].message_type = _TREE
+_PIPELINE.fields_by_name['geom'].message_type = geometry__pb2._GEOMETRY
+_PIPELINES.fields_by_name['pipelines'].message_type = _PIPELINE
 DESCRIPTOR.message_types_by_name['Feature'] = _FEATURE
 DESCRIPTOR.message_types_by_name['River'] = _RIVER
 DESCRIPTOR.message_types_by_name['Rivers'] = _RIVERS
@@ -615,6 +789,10 @@ DESCRIPTOR.message_types_by_name['BuiltUp'] = _BUILTUP
 DESCRIPTOR.message_types_by_name['BuiltUps'] = _BUILTUPS
 DESCRIPTOR.message_types_by_name['Region'] = _REGION
 DESCRIPTOR.message_types_by_name['Regions'] = _REGIONS
+DESCRIPTOR.message_types_by_name['Tree'] = _TREE
+DESCRIPTOR.message_types_by_name['Trees'] = _TREES
+DESCRIPTOR.message_types_by_name['Pipeline'] = _PIPELINE
+DESCRIPTOR.message_types_by_name['Pipelines'] = _PIPELINES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Feature = _reflection.GeneratedProtocolMessageType('Feature', (_message.Message,), {
@@ -694,6 +872,34 @@ Regions = _reflection.GeneratedProtocolMessageType('Regions', (_message.Message,
   })
 _sym_db.RegisterMessage(Regions)
 
+Tree = _reflection.GeneratedProtocolMessageType('Tree', (_message.Message,), {
+  'DESCRIPTOR' : _TREE,
+  '__module__' : 'alaska_pb2'
+  # @@protoc_insertion_point(class_scope:alaska.Tree)
+  })
+_sym_db.RegisterMessage(Tree)
+
+Trees = _reflection.GeneratedProtocolMessageType('Trees', (_message.Message,), {
+  'DESCRIPTOR' : _TREES,
+  '__module__' : 'alaska_pb2'
+  # @@protoc_insertion_point(class_scope:alaska.Trees)
+  })
+_sym_db.RegisterMessage(Trees)
+
+Pipeline = _reflection.GeneratedProtocolMessageType('Pipeline', (_message.Message,), {
+  'DESCRIPTOR' : _PIPELINE,
+  '__module__' : 'alaska_pb2'
+  # @@protoc_insertion_point(class_scope:alaska.Pipeline)
+  })
+_sym_db.RegisterMessage(Pipeline)
+
+Pipelines = _reflection.GeneratedProtocolMessageType('Pipelines', (_message.Message,), {
+  'DESCRIPTOR' : _PIPELINES,
+  '__module__' : 'alaska_pb2'
+  # @@protoc_insertion_point(class_scope:alaska.Pipelines)
+  })
+_sym_db.RegisterMessage(Pipelines)
+
 
 
 _ALASKER = _descriptor.ServiceDescriptor(
@@ -703,8 +909,8 @@ _ALASKER = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=968,
-  serialized_end=1215,
+  serialized_start=1256,
+  serialized_end=1599,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetRivers',
@@ -753,6 +959,26 @@ _ALASKER = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_FEATURE,
     output_type=_BUILTUPS,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetTrees',
+    full_name='alaska.Alasker.GetTrees',
+    index=5,
+    containing_service=None,
+    input_type=_FEATURE,
+    output_type=_TREES,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetPipelines',
+    full_name='alaska.Alasker.GetPipelines',
+    index=6,
+    containing_service=None,
+    input_type=_FEATURE,
+    output_type=_PIPELINES,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),

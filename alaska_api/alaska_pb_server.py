@@ -4,11 +4,11 @@ from sqlalchemy import MetaData,create_engine,Table
 from sqlalchemy import select
 
 #support for geometries
-from geoalchemy2 import Geometry
+from geoalchemy2 import Geometry,functions as func
 from geoalchemy2.shape import to_shape
 
 from alaska_pb2_grpc import AlaskerServicer
-from alaska_pb2 import Rivers,River,Airport,Airports,Lakes,Lake,Regions,Region,BuiltUps,BuiltUp
+from alaska_pb2 import Pipeline, Pipelines, Rivers,River,Airport,Airports,Lakes,Lake,Regions,Region,BuiltUps,BuiltUp,Tree,Trees
 from shapely_serializer import ShapelyGeometrySerializer
 import alaska_pb2_grpc
 import argparse
@@ -28,8 +28,8 @@ def serialize_river(row):
 def serialize_airport(row):
     return Airport(
         gid=row.ogc_fid,
-        id = row.id,
-        fk_region = row.fk_region,
+        id = int(row.id),
+        fk_region = int(row.fk_region),
         elevation = row.elev,
         name = row.name,
         use = row.use,
@@ -60,6 +60,21 @@ def serialize_built_up(row):
         geom = shapely_serializer.serialize(to_shape(row.geom))
     )
 
+def serialize_tree(row):
+    return Tree(
+        id = row.ogc_fid,
+        category = row.cat,
+        vegetationDescription = row.vegdesc,
+        geom = shapely_serializer.serialize(to_shape(row.geom))
+    )
+
+def serialize_pipeline(row):
+    return Pipeline(
+        id = row.ogc_fid,
+        category = row.cat,
+        description = row.locdesc,
+        geom = shapely_serializer.serialize(to_shape(row.geom))
+    )
 
 class AlaskerServicerImpl(AlaskerServicer):
 
@@ -79,13 +94,18 @@ class AlaskerServicerImpl(AlaskerServicer):
 
         self.built_ups = Table('builtups',metadata,autoload=True,autoload_with=engine)
 
+        self.pipelines = Table('pipelines',metadata,autoload=True,autoload_with=engine)
+
+        self.trees = Table('trees',metadata,autoload=True,autoload_with=engine)
+
         self.geometry_columns = Table('geometry_columns',metadata,autoload=True,autoload_with=engine)
 
 
     def GetRivers(self, request, context):
         print('GetRivers request')
         #ignore feature request
-        s = select([self.rivers])
+        r = self.rivers
+        s = select([r.c.ogc_fid,r.c.cat,r.c.f_codedesc,r.c.nam,r.c.f_code,func.ST_Simplify(r.c.geom,)])
         rows = self.connection.execute(s)
         rivers = [serialize_river(row) for row in rows]
         return Rivers(
@@ -124,6 +144,20 @@ class AlaskerServicerImpl(AlaskerServicer):
         return BuiltUps(
             builtups = [serialize_built_up(row) for row in rows],
             srid = 4326
+        )
+    
+    def GetTrees(self, request, context):
+        s = select([self.trees])
+        rows = self.connection.execute(s)
+        return Trees(
+            trees = [serialize_tree(row) for row in rows]
+        )
+    
+    def GetPipelines(self, request, context):
+        s = select([self.pipelines])
+        rows = self.connection.execute(s)
+        return Pipelines(
+            pipelines = [serialize_pipeline(row) for row in rows]
         )
 
 import grpc
@@ -175,3 +209,4 @@ if __name__ == "__main__":
     serve(args.password)
 
     
+# python alaska_api/alaska_pb_server.py -db alaska_features -u postgres -w Mula1000 --host localhost

@@ -39,6 +39,16 @@ class AlaskerStub(object):
                 request_serializer=alaska__pb2.Feature.SerializeToString,
                 response_deserializer=alaska__pb2.BuiltUps.FromString,
                 )
+        self.GetTrees = channel.unary_unary(
+                '/alaska.Alasker/GetTrees',
+                request_serializer=alaska__pb2.Feature.SerializeToString,
+                response_deserializer=alaska__pb2.Trees.FromString,
+                )
+        self.GetPipelines = channel.unary_unary(
+                '/alaska.Alasker/GetPipelines',
+                request_serializer=alaska__pb2.Feature.SerializeToString,
+                response_deserializer=alaska__pb2.Pipelines.FromString,
+                )
 
 
 class AlaskerServicer(object):
@@ -74,6 +84,18 @@ class AlaskerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetTrees(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPipelines(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AlaskerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -101,6 +123,16 @@ def add_AlaskerServicer_to_server(servicer, server):
                     servicer.GetBuildUps,
                     request_deserializer=alaska__pb2.Feature.FromString,
                     response_serializer=alaska__pb2.BuiltUps.SerializeToString,
+            ),
+            'GetTrees': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTrees,
+                    request_deserializer=alaska__pb2.Feature.FromString,
+                    response_serializer=alaska__pb2.Trees.SerializeToString,
+            ),
+            'GetPipelines': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPipelines,
+                    request_deserializer=alaska__pb2.Feature.FromString,
+                    response_serializer=alaska__pb2.Pipelines.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -194,5 +226,39 @@ class Alasker(object):
         return grpc.experimental.unary_unary(request, target, '/alaska.Alasker/GetBuildUps',
             alaska__pb2.Feature.SerializeToString,
             alaska__pb2.BuiltUps.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetTrees(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/alaska.Alasker/GetTrees',
+            alaska__pb2.Feature.SerializeToString,
+            alaska__pb2.Trees.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPipelines(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/alaska.Alasker/GetPipelines',
+            alaska__pb2.Feature.SerializeToString,
+            alaska__pb2.Pipelines.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
