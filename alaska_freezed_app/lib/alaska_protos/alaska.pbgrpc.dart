@@ -34,6 +34,14 @@ class AlaskerClient extends $grpc.Client {
       '/alaska.Alasker/GetBuildUps',
       ($0.Feature value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.BuiltUps.fromBuffer(value));
+  static final _$getTrees = $grpc.ClientMethod<$0.Feature, $0.Trees>(
+      '/alaska.Alasker/GetTrees',
+      ($0.Feature value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Trees.fromBuffer(value));
+  static final _$getPipelines = $grpc.ClientMethod<$0.Feature, $0.Pipelines>(
+      '/alaska.Alasker/GetPipelines',
+      ($0.Feature value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.Pipelines.fromBuffer(value));
 
   AlaskerClient($grpc.ClientChannel channel,
       {$grpc.CallOptions options,
@@ -63,6 +71,16 @@ class AlaskerClient extends $grpc.Client {
   $grpc.ResponseFuture<$0.BuiltUps> getBuildUps($0.Feature request,
       {$grpc.CallOptions options}) {
     return $createUnaryCall(_$getBuildUps, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.Trees> getTrees($0.Feature request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$getTrees, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.Pipelines> getPipelines($0.Feature request,
+      {$grpc.CallOptions options}) {
+    return $createUnaryCall(_$getPipelines, request, options: options);
   }
 }
 
@@ -105,6 +123,20 @@ abstract class AlaskerServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.Feature.fromBuffer(value),
         ($0.BuiltUps value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Feature, $0.Trees>(
+        'GetTrees',
+        getTrees_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Feature.fromBuffer(value),
+        ($0.Trees value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.Feature, $0.Pipelines>(
+        'GetPipelines',
+        getPipelines_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.Feature.fromBuffer(value),
+        ($0.Pipelines value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.Rivers> getRivers_Pre(
@@ -132,6 +164,16 @@ abstract class AlaskerServiceBase extends $grpc.Service {
     return getBuildUps(call, await request);
   }
 
+  $async.Future<$0.Trees> getTrees_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Feature> request) async {
+    return getTrees(call, await request);
+  }
+
+  $async.Future<$0.Pipelines> getPipelines_Pre(
+      $grpc.ServiceCall call, $async.Future<$0.Feature> request) async {
+    return getPipelines(call, await request);
+  }
+
   $async.Future<$0.Rivers> getRivers(
       $grpc.ServiceCall call, $0.Feature request);
   $async.Future<$0.Regions> getRegions(
@@ -140,5 +182,8 @@ abstract class AlaskerServiceBase extends $grpc.Service {
   $async.Future<$0.Airports> getAirports(
       $grpc.ServiceCall call, $0.Feature request);
   $async.Future<$0.BuiltUps> getBuildUps(
+      $grpc.ServiceCall call, $0.Feature request);
+  $async.Future<$0.Trees> getTrees($grpc.ServiceCall call, $0.Feature request);
+  $async.Future<$0.Pipelines> getPipelines(
       $grpc.ServiceCall call, $0.Feature request);
 }

@@ -664,3 +664,211 @@ class Regions extends $pb.GeneratedMessage {
   void clearSrid() => clearField(2);
 }
 
+class Tree extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Tree', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'alaska'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'category', $pb.PbFieldType.OD)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'vegetationDescription', protoName: 'vegetationDescription')
+    ..aOM<$1.Geometry>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'geom', subBuilder: $1.Geometry.create)
+    ..hasRequiredFields = false
+  ;
+
+  Tree._() : super();
+  factory Tree() => create();
+  factory Tree.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Tree.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Tree clone() => Tree()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Tree copyWith(void Function(Tree) updates) => super.copyWith((message) => updates(message as Tree)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Tree create() => Tree._();
+  Tree createEmptyInstance() => create();
+  static $pb.PbList<Tree> createRepeated() => $pb.PbList<Tree>();
+  @$core.pragma('dart2js:noInline')
+  static Tree getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Tree>(create);
+  static Tree _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get id => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set id($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get category => $_getN(1);
+  @$pb.TagNumber(2)
+  set category($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategory() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get vegetationDescription => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set vegetationDescription($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasVegetationDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearVegetationDescription() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Geometry get geom => $_getN(3);
+  @$pb.TagNumber(4)
+  set geom($1.Geometry v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasGeom() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGeom() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.Geometry ensureGeom() => $_ensure(3);
+}
+
+class Trees extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Trees', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'alaska'), createEmptyInstance: create)
+    ..pc<Tree>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'trees', $pb.PbFieldType.PM, subBuilder: Tree.create)
+    ..hasRequiredFields = false
+  ;
+
+  Trees._() : super();
+  factory Trees() => create();
+  factory Trees.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Trees.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Trees clone() => Trees()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Trees copyWith(void Function(Trees) updates) => super.copyWith((message) => updates(message as Trees)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Trees create() => Trees._();
+  Trees createEmptyInstance() => create();
+  static $pb.PbList<Trees> createRepeated() => $pb.PbList<Trees>();
+  @$core.pragma('dart2js:noInline')
+  static Trees getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Trees>(create);
+  static Trees _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Tree> get trees => $_getList(0);
+}
+
+class Pipeline extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Pipeline', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'alaska'), createEmptyInstance: create)
+    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id', $pb.PbFieldType.O3)
+    ..a<$core.double>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'category', $pb.PbFieldType.OD)
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
+    ..aOM<$1.Geometry>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'geom', subBuilder: $1.Geometry.create)
+    ..hasRequiredFields = false
+  ;
+
+  Pipeline._() : super();
+  factory Pipeline() => create();
+  factory Pipeline.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Pipeline.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Pipeline clone() => Pipeline()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Pipeline copyWith(void Function(Pipeline) updates) => super.copyWith((message) => updates(message as Pipeline)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Pipeline create() => Pipeline._();
+  Pipeline createEmptyInstance() => create();
+  static $pb.PbList<Pipeline> createRepeated() => $pb.PbList<Pipeline>();
+  @$core.pragma('dart2js:noInline')
+  static Pipeline getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Pipeline>(create);
+  static Pipeline _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.int get id => $_getIZ(0);
+  @$pb.TagNumber(1)
+  set id($core.int v) { $_setSignedInt32(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.double get category => $_getN(1);
+  @$pb.TagNumber(2)
+  set category($core.double v) { $_setDouble(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasCategory() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearCategory() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get description => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set description($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasDescription() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearDescription() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $1.Geometry get geom => $_getN(3);
+  @$pb.TagNumber(4)
+  set geom($1.Geometry v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasGeom() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearGeom() => clearField(4);
+  @$pb.TagNumber(4)
+  $1.Geometry ensureGeom() => $_ensure(3);
+}
+
+class Pipelines extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Pipelines', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'alaska'), createEmptyInstance: create)
+    ..pc<Pipeline>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pipelines', $pb.PbFieldType.PM, subBuilder: Pipeline.create)
+    ..hasRequiredFields = false
+  ;
+
+  Pipelines._() : super();
+  factory Pipelines() => create();
+  factory Pipelines.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Pipelines.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Pipelines clone() => Pipelines()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Pipelines copyWith(void Function(Pipelines) updates) => super.copyWith((message) => updates(message as Pipelines)); // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Pipelines create() => Pipelines._();
+  Pipelines createEmptyInstance() => create();
+  static $pb.PbList<Pipelines> createRepeated() => $pb.PbList<Pipelines>();
+  @$core.pragma('dart2js:noInline')
+  static Pipelines getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Pipelines>(create);
+  static Pipelines _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.List<Pipeline> get pipelines => $_getList(0);
+}
+

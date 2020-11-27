@@ -119,3 +119,37 @@ const Regions$json = const {
   ],
 };
 
+const Tree$json = const {
+  '1': 'Tree',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 5, '10': 'id'},
+    const {'1': 'category', '3': 2, '4': 1, '5': 1, '10': 'category'},
+    const {'1': 'vegetationDescription', '3': 3, '4': 1, '5': 9, '10': 'vegetationDescription'},
+    const {'1': 'geom', '3': 4, '4': 1, '5': 11, '6': '.geometry.Geometry', '10': 'geom'},
+  ],
+};
+
+const Trees$json = const {
+  '1': 'Trees',
+  '2': const [
+    const {'1': 'trees', '3': 1, '4': 3, '5': 11, '6': '.alaska.Tree', '10': 'trees'},
+  ],
+};
+
+const Pipeline$json = const {
+  '1': 'Pipeline',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 5, '10': 'id'},
+    const {'1': 'category', '3': 2, '4': 1, '5': 1, '10': 'category'},
+    const {'1': 'description', '3': 3, '4': 1, '5': 9, '10': 'description'},
+    const {'1': 'geom', '3': 4, '4': 1, '5': 11, '6': '.geometry.Geometry', '10': 'geom'},
+  ],
+};
+
+const Pipelines$json = const {
+  '1': 'Pipelines',
+  '2': const [
+    const {'1': 'pipelines', '3': 1, '4': 3, '5': 11, '6': '.alaska.Pipeline', '10': 'pipelines'},
+  ],
+};
+
