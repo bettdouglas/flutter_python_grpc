@@ -45,7 +45,7 @@ def serialize_lake(row):
 
 def serialize_region(row):
     return Region(
-        id = row.ogc_fid,
+        id = int(row.ogc_fid),
         name = row.name_2,
         type = row.type_2,
         geom = shapely_serializer.serialize(to_shape(row.geom))
@@ -53,7 +53,7 @@ def serialize_region(row):
 
 def serialize_built_up(row):
     return BuiltUp(
-        gid = row.ogc_fid,
+        gid = int(row.ogc_fid),
         category = row.cat,
         name = row.name,
         code = row.f_code,
