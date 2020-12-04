@@ -3,7 +3,6 @@ from shapely.geometry import LineString,Point,MultiLineString,MultiPoint,MultiPo
 from shapely.geometry.base import BaseGeometry
 import geometry_pb2 as gpb
 
-
 class ShapelyPBDeserializer:
     """
     This class provides the JTS to ProtoBuf Deserialization functionality.
