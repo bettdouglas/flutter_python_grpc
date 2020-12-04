@@ -14,18 +14,6 @@ service Alasker {
     rpc GetPipelines (Feature) returns (Pipelines);
 }
 
-message Feature {
-    enum FeatureType {
-        AIRPORT = 0;
-        LAKE = 2;
-        RIVER = 3;
-        BUILT_UPS = 4;
-        REGIONS = 5;
-        TREES = 6;
-    }
-    FeatureType feature = 1;
-}
-
 message River {
     int32 id = 1;
     string codedesc = 2;
@@ -114,4 +102,15 @@ message Pipelines {
     int32 srid = 2;
 }
 
+message Feature {
+    enum FeatureType {
+        AIRPORT = 0;
+        LAKE = 2;
+        RIVER = 3;
+        BUILT_UPS = 4;
+        REGIONS = 5;
+        TREES = 6;
+    }
+    FeatureType feature = 1;
+}
 // protoc -I lib/protos/ lib/protos/alaska.proto --dart_out=grpc:lib/protos/generated

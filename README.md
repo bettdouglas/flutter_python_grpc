@@ -3,7 +3,8 @@ An example app to show how to serialize and deserialize GEOS geometries using a 
 
 The original inspiration of this serialization framework was made by [topology-serialization-framework](https://github.com/52North/topology-serialization-framework.git) by [52North](https://github.com/52North) for [Java Topology Suite](https://github.com/locationtech/jts.git)
 
-![GeoProtobuf proto spec](https://github.com/[bettdouglas]/[flutter_python_grpc]/blob/[master]/image.jpg?raw=true)
+
+<img src="images/geometry_proto.png" alt="GeoProtobuf proto spec" width="500"/>
 
 ## Requirements
 * PostgreSQL database runing with [postgis.net](postgis) installed.
@@ -39,4 +40,7 @@ I added helpers to serialize the geometries into a grpc format compatible with t
 
 The geometries and metadata defined in the alaska.proto file were then transmitted through [grpc(grpc.net) to flutter and
 then deserialized into [dart_jts](pub.dev/packages/dart_jts) geometries which is a port of the Java Topology Suite enabling us to do more spatial operations on the geometries from postgis. 
+
+<img src="images/alaska_proto.png" alt="Alaska Service Spec" width="500"/>
+
 
