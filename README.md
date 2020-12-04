@@ -1,5 +1,9 @@
 # flutter_python_grpc
-An example app to show how to serialize and deserialize GEOS geometries using a common .proto file and plot them in flutter using flutter_map. 
+An example app to show how to serialize and deserialize GEOS geometries using a common .proto file and plot them in flutter using [pub.dev/packages/flutter_map](flutter_map). 
+
+The original inspiration of this serialization framework was made by [topology-serialization-framework](https://github.com/52North/topology-serialization-framework.git) by [52North](https://github.com/52North) for [Java Topology Suite](https://github.com/locationtech/jts.git)
+
+![GeoProtobuf proto spec](https://github.com/[bettdouglas]/[flutter_python_grpc]/blob/[master]/image.jpg?raw=true)
 
 ## Requirements
 * PostgreSQL database runing with [postgis.net](postgis) installed.
@@ -12,11 +16,11 @@ An example app to show how to serialize and deserialize GEOS geometries using a 
 
 ## Frameworks Used
 ### Mobile App
-1. [pub.dev/packages/flutter_map](flutter_map) - To renderer maps on app
-2. [pub.dev/packages/protobuf](protobuf) - Decode protobuf objects to dart objects from grpc payload
-3. [pub.dev/packages/grpc](grpc) - Make calls to python grpc client and handle serialization of common objects like string, num, int, map etc
-4. [pub.dev/packages/freezed](freezed) - Union classes to elegantly handle and render states of the app (Loading, Initial,Loaded, Error)
-5. [pub.dev/packages/provider](provider) - Handle state management
+1. [flutter_map](pub.dev/packages/flutter_map) - To renderer maps on app
+2. [protobuf](pub.dev/packages/protobuf) - Decode protobuf objects to dart objects from grpc payload
+3. [grpc](pub.dev/packages/grpc) - Make calls to python grpc client and handle serialization of common objects like string, num, int, map etc
+4. [freezed](pub.dev/packages/freezed) - Union classes to elegantly handle and render states of the app (Loading, Initial,Loaded, Error)
+5. [provider](pub.dev/packages/provider) - Handle state management
 
 ### Backend(API)
 ###### The backend architecture is just reading from a postgres(postgis) database using sqlalchemy and geoalchemy2(for geometric/postgis objects) and transmitting the read data to the app via grpc.
@@ -29,10 +33,10 @@ Packages used include
 6. psycopg2-binary==2.8.6
 7. Shapely==1.7.1
 
-This example was run reading geometries from [postgis.net](postgis), read using sqlalchemy with support for geometries using geoalchemy2 and serialized to geometries using shapely's `to_shape`. 
+This example was run reading geometries from [postgis](postgis.net), read using sqlalchemy with support for geometries using geoalchemy2 and serialized to geometries using shapely's `to_shape`. 
 
 I added helpers to serialize the geometries into a grpc format compatible with the proto design below. 
 
-The geometries and metadata defined in the alaska.proto file were then transmitted through [grpc.net](grpc) to flutter and
-then deserialized into [pub.dev/packages/dart_jts](dart_jts) geometries which is a port of the Java Topology Suite enabling us to do more spatial operations on the geometries from postgis. 
+The geometries and metadata defined in the alaska.proto file were then transmitted through [grpc(grpc.net) to flutter and
+then deserialized into [dart_jts](pub.dev/packages/dart_jts) geometries which is a port of the Java Topology Suite enabling us to do more spatial operations on the geometries from postgis. 
 
