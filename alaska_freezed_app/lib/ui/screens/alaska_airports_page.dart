@@ -13,7 +13,6 @@ import 'package:latlong/latlong.dart';
 class AlaskaAirportsPage extends StatelessWidget {
   static final String route = 'AlaskaAirportsPage';
 
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -38,6 +37,7 @@ class AlaskaAirportsPage extends StatelessWidget {
             error: (error) {
               return ErrorMap(
                 error: error.message,
+                retry: () => airportsProvider.update,
               );
             },
           ),
@@ -66,39 +66,30 @@ class AirportsMap extends StatelessWidget {
         (e) {
           return e.asPoint.plot(
             builder: (context) => IconButton(
-              onPressed: () {
-                print(e);
-                showBottomSheet(
-                  context: context,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  )),
-                  builder: (context) {
-                    return Container(
-                      height: 400,
-                      width: MediaQuery.of(context).size.width,
-                      child: AirportInfoWidget(airport: e,),
-                    );
-                  },
-                );
-              },
-              icon: Icon(
-                Icons.local_airport,
-                color: Colors.black,
-              )
-                  // .card(
-                  //   elevation: 10,
-                  //   shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(20),
-                  //   ),
-                  // )
-                  // .alignment(Alignment.center)
-                  // .backgroundColor(
-                  //   Color(0xffEBECF1),
-                  // ),
-            ),
+                onPressed: () {
+                  print(e);
+                  showBottomSheet(
+                    context: context,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(20),
+                      topRight: Radius.circular(20),
+                    )),
+                    builder: (context) {
+                      return Container(
+                        height: 400,
+                        width: MediaQuery.of(context).size.width,
+                        child: AirportInfoWidget(
+                          airport: e,
+                        ),
+                      );
+                    },
+                  );
+                },
+                icon: Icon(
+                  Icons.local_airport,
+                  color: Colors.black,
+                )),
             height: 50,
             width: 50,
           );
@@ -121,13 +112,12 @@ class AirportInfoWidget extends StatelessWidget {
         // .bold().fontSize(19).textAlignment(TextAlign.start).padding(bottom: 10),
         // Text('ELEVATION')
         Text.rich(
-          TextSpan(text: 'ELEVATION: ',children: [
-            TextSpan(
-              text: '${airport.elevation}'
-            )
-          ]),
+          TextSpan(
+            text: 'ELEVATION: ',
+            children: [TextSpan(text: '${airport.elevation}')],
+          ),
         ),
-          // textColor(Colors.green).fontWeight(FontWeight.w700),
+        // textColor(Colors.green).fontWeight(FontWeight.w700),
       ],
     );
   }

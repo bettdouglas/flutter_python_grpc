@@ -21,3 +21,11 @@ extension LakeAsPolygon on Lake {
 extension BuiltUpAsPolygon on BuiltUp {
   Polygon get asPolygon => pbDeserializer.deserializePolygon(this.geom);
 }
+
+extension PipelineAsLineString on Pipeline {
+  LineString get asLineString => pbDeserializer.deserializeLineString(this.geom);
+}
+
+extension TreesAsPolygons on Tree {
+  Polygon get asPolygon => pbDeserializer.deserializePolygon(this.geom);
+}

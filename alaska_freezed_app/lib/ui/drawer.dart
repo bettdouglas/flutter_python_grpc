@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:i_know_everything/ui/screens/alaska_airports_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_built_ups_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_lakes_page.dart';
+import 'package:i_know_everything/ui/screens/alaska_pipelines_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_regions_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_rivers_page.dart';
 
@@ -63,6 +64,18 @@ Drawer buildDrawer(BuildContext context, String currentRoute) {
           context,
           const Text('Alaska Regions'),
           AlaskaRegionsPage.route,
+          currentRoute,
+        ),
+        _buildMenuItem(
+          context,
+          const Text('Alaska Pipelines'),
+          AlaskaPipelinesPage.route,
+          currentRoute,
+        ),
+        _buildMenuItem(
+          context,
+          const Text('Alaska Trees'),
+          AlaskaPipelinesPage.route,
           currentRoute,
         ),
       ],

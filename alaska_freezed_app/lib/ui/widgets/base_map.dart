@@ -44,7 +44,7 @@ class BaseMap extends StatelessWidget {
       child: FlutterMap(
         options: MapOptions(
           center: this.center,
-          zoom: 13.0,
+          zoom: 2.0,
           onTap: (point) {
             print(point);
           },
