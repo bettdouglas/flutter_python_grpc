@@ -17,12 +17,18 @@ dependencies:
   protobuf: 1.1.0
   grpc: 2.8.0
   dart_jts: 0.0.6
+  color_palette_generator: ^1.0.3 
+  sleek_button: ^0.1.1
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^0.12.2
   build_runner:
+
+dependency_overrides:
+  freezed_annotation: ^0.12.0
 
 # The following section is specific to Flutter.
 flutter:

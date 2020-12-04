@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:i_know_everything/ui/screens/alaska_airports_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_built_ups_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_lakes_page.dart';
+import 'package:i_know_everything/ui/screens/alaska_pipelines_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_regions_page.dart';
 import 'package:i_know_everything/ui/screens/alaska_rivers_page.dart';
+import 'package:i_know_everything/ui/screens/alaska_trees_page.dart';
 
 main() {
   runApp(MyApp());
@@ -22,6 +24,8 @@ class MyApp extends StatelessWidget {
         AlaskaBuiltUpsPage.route: (_) => AlaskaBuiltUpsPage(),
         AlaskaLakesPage.route: (_) => AlaskaLakesPage(),
         AlaskaRegionsPage.route: (_) => AlaskaRegionsPage(),
+        AlaskaPipelinesPage.route: (_) => AlaskaPipelinesPage(),
+        AlaskaTreesPage.route: (_) => AlaskaTreesPage(),
       },
     );
   }
