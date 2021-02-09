@@ -3,6 +3,8 @@ An example app to show how to serialize and deserialize GEOS geometries using a 
 
 The original inspiration of this serialization framework was made by [topology-serialization-framework](https://github.com/52North/topology-serialization-framework.git) by [52North](https://github.com/52North) for [Java Topology Suite](https://github.com/locationtech/jts.git)
 
+Since there's a port of [Java Topology Suite](https://github.com/locationtech/jts.git) for Dart, and the defacto of handling geodata in python is shapely, this example shows how to serialize and deserialize geometries transmitted over grpc. 
+
 
 <img src="images/geometry_proto.png" alt="GeoProtobuf proto spec" width="500"/>
 
