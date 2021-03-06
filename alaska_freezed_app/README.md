@@ -1,4 +1,4 @@
-# i_know_everything
+# App
 
 A new Flutter project.
 
