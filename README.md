@@ -22,7 +22,7 @@ Since there's a port of [Java Topology Suite](https://github.com/locationtech/jt
 1. [flutter_map](pub.dev/packages/flutter_map) - To renderer maps on app
 2. [protobuf](pub.dev/packages/protobuf) - Decode protobuf objects to dart objects from grpc payload
 3. [grpc](pub.dev/packages/grpc) - Make calls to python grpc client and handle serialization of common objects like string, num, int, map etc
-4. [freezed](pub.dev/packages/freezed) - Union classes to elegantly handle and render states of the app (Loading, Initial,Loaded, Error)
+4. [freezed](https://pub.dev/packages/freezed) - Union classes to elegantly handle and render states of the app (Loading, Initial,Loaded, Error)
 5. [provider](pub.dev/packages/provider) - Handle state management
 
 ### Backend(API)
