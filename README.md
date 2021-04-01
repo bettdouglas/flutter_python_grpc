@@ -19,11 +19,11 @@ Since there's a port of [Java Topology Suite](https://github.com/locationtech/jt
 
 ## Frameworks Used
 ### Mobile App
-1. [flutter_map](pub.dev/packages/flutter_map) - To renderer maps on app
-2. [protobuf](pub.dev/packages/protobuf) - Decode protobuf objects to dart objects from grpc payload
-3. [grpc](pub.dev/packages/grpc) - Make calls to python grpc client and handle serialization of common objects like string, num, int, map etc
+1. [flutter_map](https://pub.dev/packages/flutter_map) - To renderer maps on app
+2. [protobuf](https://pub.dev/packages/protobuf) - Decode protobuf objects to dart objects from grpc payload
+3. [grpc](https://pub.dev/packages/grpc) - Make calls to python grpc client and handle serialization of common objects like string, num, int, map etc
 4. [freezed](https://pub.dev/packages/freezed) - Union classes to elegantly handle and render states of the app (Loading, Initial,Loaded, Error)
-5. [provider](pub.dev/packages/provider) - Handle state management
+5. [provider](https://pub.dev/packages/provider) - Handle state management
 
 ### Backend(API)
 ###### The backend architecture is just reading from a postgres(postgis) database using sqlalchemy and geoalchemy2(for geometric/postgis objects) and transmitting the read data to the app via grpc.
